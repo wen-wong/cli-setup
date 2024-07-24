@@ -75,3 +75,7 @@ fi
 if ask "Do you want to install docker?"; then
   sudo apt install docker.io -y
 fi
+
+if ask "Do you want to install maven?"; then
+  sudo apt-get install maven
+fi
