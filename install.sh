@@ -63,3 +63,7 @@ if ask "Do you want to install gleam?"; then
 
   cd $HOME
 fi
+
+if ask "Do you want to install java?"; then
+  sudo apt-get intall temurin-21-jdk
+fi
