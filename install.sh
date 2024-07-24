@@ -17,6 +17,19 @@ cd $HOME
 sudo apt-get update
 sudo apt-get upgrade
 
+if ask "Do you want to setup Git config?"; then
+  read -p "Enter email: " resp
+  while [ -z "$resp" ]; do
+    read -p "(Empty email) Enter email again: " resp
+  done
+  read -p "Enter username: " username
+  while [ -z "$username" ]; do
+    read -p "(Empty username) Enter username again: " username
+  done
+  git config --global user.email "$resp"
+  git config --global user.name "$username"
+fi
+
 if ask "Do you want to install C libraries?"; then
 	sudo apt intall gcc
 	sudo apt install make
