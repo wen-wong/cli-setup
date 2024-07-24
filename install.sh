@@ -49,8 +49,17 @@ if ask "Do you want to intall nvm?"; then
 fi
 
 if ask "Do you want to install gleam?"; then
-  wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb
-  sudo dpkg -i erlang-solutions_2.0_all.deb
-  sudo apt-get update
-  sudo apt-get install esl-erlang
+  cd /tmp
+  git clone https://github.com/gleam-lang/gleam.git --branch v1.3.0
+  cd gleam
+  make install
+
+  cd $HOME
+  sudo apt-get install erlang
+
+  git clone https://github.com/erlang/rebar3.git
+  cd $HOME/rebar3
+  ./bootstrap
+
+  cd $HOME
 fi
