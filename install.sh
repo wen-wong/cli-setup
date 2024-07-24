@@ -12,15 +12,22 @@ function ask() {
 	[ "$response_lc" = "y" ]
 }
 
+cd $HOME
+
+sudo apt-get update
+sudo apt-get upgrade
+
 if ask "Do you want to install C libraries?"; then
 	sudo apt intall gcc
 	sudo apt install make
 fi
 
 if ask "Do you want to install neovim?"; then
-	sudo apt install neovim
+  sudo apt-get install ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl doxygen ripgrep
+  git clone https://github.com/neovim/neovim.git
+  cd $HOME/neovim
+  make CMAKE_BUILD_TYPE=RelWithDebInfo
+  sudo make install
+  cd $HOME
 fi
 
-if ask "Do you want to setup NvChad?"; then
-	sudo apt-get install ripgrep
-fi
