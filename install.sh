@@ -71,3 +71,7 @@ if ask "Do you want to install java?"; then
   sudo apt update
   sudo apt install temurin-21-jdk
 fi
+
+if ask "Do you want to install docker?"; then
+  sudo apt install docker.io -y
+fi
