@@ -48,3 +48,9 @@ if ask "Do you want to intall nvm?"; then
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 fi
 
+if ask "Do you want to install gleam?"; then
+  wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb
+  sudo dpkg -i erlang-solutions_2.0_all.deb
+  sudo apt-get update
+  sudo apt-get install esl-erlang
+fi
