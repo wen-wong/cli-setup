@@ -79,3 +79,11 @@ fi
 if ask "Do you want to install maven?"; then
   sudo apt-get install maven
 fi
+
+if ask "Do you want to install gradle?"; then
+  # Install Gradle package
+  curl -k -L -v -X GET https\://services.gradle.org/distributions/gradle-8.9-bin.zip > gradle-8.9-bin.zip
+  # Unpack to correct location
+  sudo mkdir /opt/gradle
+  sudo unzip -d /opt/gradle gradle-8.9-bin.zip
+fi
