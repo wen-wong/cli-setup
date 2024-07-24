@@ -20,3 +20,7 @@ fi
 if ask "Do you want to install neovim?"; then
 	sudo apt install neovim
 fi
+
+if ask "Do you want to setup NvChad?"; then
+	sudo apt-get install ripgrep
+fi
