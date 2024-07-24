@@ -44,3 +44,7 @@ if ask "Do you want to install neovim?"; then
   cd $HOME
 fi
 
+if ask "Do you want to intall nvm?"; then
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+fi
+
