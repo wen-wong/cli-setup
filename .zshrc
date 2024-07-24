@@ -8,6 +8,9 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # Set the directory we want to store cargo
 source "$HOME/.cargo/env"
 
+# Set the director we want to store gradle
+export PATH=$PATH:/opt/gradle/gradle-8.9/bin
+
 # Download Zinit, if it's not there yet
 if [ ! -d "$ZINIT_HOME" ]; then
 	mkdir -p "$(dirname $ZINIT_HOME)"
