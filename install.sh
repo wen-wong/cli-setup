@@ -12,6 +12,11 @@ function ask() {
 	[ "$response_lc" = "y" ]
 }
 
+if ask "Do you want to install C libraries?"; then
+	sudo apt intall gcc
+	sudo apt install make
+fi
+
 if ask "Do you want to install neovim?"; then
 	sudo apt install neovim
 fi
